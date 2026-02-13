@@ -64,19 +64,19 @@ nav>ul>li.fechar-mobile {
 /* ================= TEXTOS ================= */
 h1 {
   text-align: center;
-  font-size: 50px;
+  font-size: 3rem;
   margin: 30px 0;
 }
 
 h2 {
   text-align: center;
-  font-size: 50px;
+  font-size: 3rem;
   margin: 30px 0;
 }
 
 p {
   text-align: center;
-  font-size: 25px;
+  font-size: 1.5rem;
   margin: 30px 0;
 }
 
@@ -124,7 +124,6 @@ div.cards button {
 
 /* ================= BOTÕES ================= */
 button:hover {
-  transform: scale(1.05);
   transition: 0.4s ease-in-out;
   background-color: orange;
 }
@@ -135,7 +134,7 @@ legend {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 1.5rem;
 }
 
 form fieldset {
@@ -144,10 +143,17 @@ form fieldset {
   padding: 30px;
   margin: 30px auto;
   max-width: 800px;
+  width: 90%;
   background-color: #fff8f0;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 form label {
@@ -179,17 +185,20 @@ form .input {
   display: flex;
   justify-content: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 form .input input[type="submit"],
 form .input input[type="reset"] {
-  width: 150px;
-  padding: 12px 0;
+  min-width: 150px;
+  padding: 12px 24px;
   border-radius: 45px;
   border: 2px solid orange;
   background-color: orange;
   color: white;
   cursor: pointer;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 form .input input[type="submit"]:hover,
@@ -197,6 +206,18 @@ form .input input[type="reset"]:hover {
   background-color: white;
   color: orange;
   transform: scale(1.05);
+}
+
+/* ================= INFORMAÇÕES DE CONTATO ================= */
+.info-contato {
+  text-align: center;
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-contato p {
+  margin: 15px 0;
 }
 
 /* ================= RODAPÉ ================= */
@@ -244,27 +265,41 @@ footer#redes-sociais img:hover {
   nav ul.menu-mobile {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: orange;
-    padding-top: 100px;
-    /* espaço para o topo */
-    align-items: center;
-    gap: 20px;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    align-items: stretch;
+    gap: 3px;
+    overflow-y: auto;
+    z-index: 9999;
   }
 
   nav>ul.menu-mobile>li.fechar-mobile {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    z-index: 10000;
   }
 
   div.container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Ajuste do formulário em tablets */
+  form fieldset {
+    padding: 24px;
+    margin: 24px auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
   }
 }
 
@@ -277,6 +312,38 @@ footer#redes-sociais img:hover {
   div.menu-burguer img {
     width: 56px;
   }
+
+  /* Ajuste do formulário em smartphones */
+  h1 {
+    font-size: 2rem;
+    margin: 24px 0;
+  }
+
+  form fieldset {
+    padding: 20px;
+    margin: 16px auto;
+    gap: 16px;
+  }
+
+  form legend {
+    font-size: 1.25rem;
+  }
+
+  form label {
+    font-size: 1rem;
+  }
+
+  form .form-group {
+    gap: 6px;
+  }
+
+  .info-contato {
+    padding: 24px;
+  }
+
+  .info-contato p {
+    font-size: 1.25rem;
+  }
 }
 
 /* Smartphones médios */
@@ -288,6 +355,30 @@ footer#redes-sociais img:hover {
   div.menu-burguer img {
     width: 40px;
   }
+
+  /* Ajuste final do formulário em celulares pequenos */
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  form fieldset {
+    width: 95%;
+    padding: 16px;
+  }
+
+  form .input {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  form .input input[type="submit"],
+  form .input input[type="reset"] {
+    width: 100%;
+  }
+
+  .info-contato p {
+    font-size: 1rem;
+  }
 }
 
 /* Celular retrato */
@@ -296,11 +387,25 @@ footer#redes-sociais img:hover {
     grid-template-columns: 1fr;
   }
 
+  nav ul.menu-mobile {
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    gap: 3px;
+    align-items: stretch;
+  }
+
+  nav ul.menu-mobile li {
+    width: auto;
+    align-self: center;
+  }
+
   nav ul.menu-mobile li a {
-    font-size: 30px;
-    /* mantém fonte grande */
-    padding: 20px 0;
-    /* reduz padding vertical para não cortar texto */
+    width: 160px;
+    font-size: 18px;
+    padding: 8px 20px;
+    margin-bottom: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -316,20 +421,18 @@ footer#redes-sociais img:hover {
 
   nav ul.menu-mobile {
     flex-direction: column;
-    /* mantém empilhado */
-    justify-content: center;
-    align-items: center;
-    padding-top: 40px;
-    /* ajusta topo para caber texto */
-    gap: 8px;
-    /* reduz gap para caber tudo */
+    justify-content: flex-start;
+    min-height: 100vh;
+    align-items: stretch;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    gap: 3px;
+    overflow-y: auto;
   }
 
   nav ul.menu-mobile li a {
-    font-size: 30px;
-    /* mantém fonte grande */
-    padding: 4px 0;
-    /* reduz padding vertical para não cortar */
+    font-size: 16px;
+    padding: 8px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
