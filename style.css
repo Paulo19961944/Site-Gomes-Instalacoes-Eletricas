@@ -1,6 +1,3 @@
-/* Importa a Fonte do Google */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 /* ================= RESET E BASE ================= */
 * {
   margin: 0;
@@ -8,17 +5,31 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: white;
+  background-color: #f5f5f5;
+  line-height: 1.5;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 /* ================= HEADER ================= */
 header {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
-  background-color: orange;
+  align-items: center;
+  background-color: #ffa500;
+  padding: 0.625rem 1.5rem;
 }
 
 div.logotipo {
@@ -27,20 +38,22 @@ div.logotipo {
 }
 
 div.logotipo img {
-  height: 100%;
+  height: 4rem;
 }
 
 nav ul {
   display: flex;
-  justify-content: space-between;
   list-style: none;
+  gap: 0.5rem;
 }
 
 nav li a {
-  font-size: 30px;
+  font-size: 1rem;
   text-decoration: none;
-  color: black;
-  padding: 50px;
+  color: #222;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
 }
 
 nav a {
@@ -50,295 +63,306 @@ nav a {
 
 nav a:hover {
   cursor: pointer;
-  background-color: white;
-  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 div.menu-burguer,
-nav>ul>li.fechar-mobile {
+nav > ul > li.fechar-mobile {
   display: none;
   cursor: pointer;
-  padding-right: 20px;
 }
 
 /* ================= TEXTOS ================= */
-h1 {
+h1, h2, p {
   text-align: center;
-  font-size: 50px;
-  margin: 30px 0;
+  color: #333;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 1.5rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 h2 {
-  text-align: center;
-  font-size: 50px;
-  margin: 30px 0;
+  font-size: 1.375rem;
+  margin: 1.25rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 p {
-  text-align: center;
-  font-size: 25px;
-  margin: 30px 0;
+  font-size: 1rem;
+  margin: 1rem 0;
+  color: #666;
 }
 
 /* ================= CONTAINER E CARDS ================= */
 div.container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 1.5rem;
   justify-items: center;
-  padding: 20px;
+  padding: 1.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 div.cards {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background-color: orange;
-  border-radius: 45px;
-  padding: 50px 20px;
+  justify-content: flex-start;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
   width: 100%;
-  max-width: 500px;
-  min-height: 500px;
+  max-width: 340px;
+  min-height: 420px;
   box-sizing: border-box;
 }
 
 div.cards img {
-  width: 50%;
-  margin-bottom: 20px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.375rem;
+  display: block;
 }
 
 div.cards p {
-  margin-bottom: 20px;
-}
-
-div.cards button {
-  width: 200px;
-  height: 50px;
-  font-family: "Montserrat", sans-serif;
+  margin: 1.25rem 0;
+  font-size: 1rem;
   font-weight: 500;
-  border-radius: 45px;
-  cursor: pointer;
+  color: #333;
   text-align: center;
-}
-
-/* ================= BOTÕES ================= */
-button:hover {
-  transform: scale(1.05);
-  transition: 0.4s ease-in-out;
-  background-color: orange;
-}
-
-/* ================= FORMULÁRIO ================= */
-form,
-legend {
+  min-height: 3.5rem;
+  line-height: 1.4;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+}
+
+div.cards button {
+  width: 100%;
+  max-width: 280px;
+  padding: 0.875rem 1rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  background-color: #ffa500;
+  color: #222;
+  border: none;
+  transition: background-color 0.2s;
+  margin-top: auto;
+}
+
+div.cards button:hover {
+  background-color: #e69500;
+}
+
+/* ================= CONTATO ================= */
+.contato-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+form {
+  width: 100%;
+}
+
+form legend {
+  display: block;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #444;
 }
 
 form fieldset {
-  border: 2px solid orange;
-  border-radius: 20px;
-  padding: 30px;
-  margin: 30px auto;
-  max-width: 800px;
-  background-color: #fff8f0;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 0 auto 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 form label {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
+form input,
 form textarea {
   width: 100%;
-  padding: 12px;
-  border-radius: 15px;
-  border: 2px solid orange;
-  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid #ccc;
   font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 75px;
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: black;
+  border-color: #ffa500;
   outline: none;
-  background-color: #fff8f0;
 }
 
-form .input {
+.form-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
-form .input input[type="submit"],
-form .input input[type="reset"] {
-  width: 150px;
-  padding: 12px 0;
-  border-radius: 45px;
-  border: 2px solid orange;
-  background-color: orange;
-  color: white;
+.form-buttons input[type="submit"],
+.form-buttons input[type="reset"] {
+  min-width: 100px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  background-color: #ffa500;
+  color: #222;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: background-color 0.2s;
 }
 
-form .input input[type="submit"]:hover,
-form .input input[type="reset"]:hover {
-  background-color: white;
-  color: orange;
-  transform: scale(1.05);
+.form-buttons input[type="submit"]:hover,
+.form-buttons input[type="reset"]:hover {
+  background-color: #e69500;
+}
+
+.contato-info {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.contato-info p {
+  font-size: 0.9375rem;
+  margin: 0.5rem 0;
 }
 
 /* ================= RODAPÉ ================= */
 div.rodapé {
   text-align: center;
-  padding: 10px 0;
+  padding: 0.375rem 0;
 }
 
 footer#redes-sociais {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  background-color: orange;
-  padding: 20px 0;
+  gap: 1rem;
+  background-color: #ffa500;
+  padding: 1rem 0;
+  flex-wrap: wrap;
 }
 
 footer#redes-sociais img {
-  width: 50px;
-  height: 50px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   cursor: pointer;
+  transition: transform 0.2s;
 }
 
 footer#redes-sociais img:hover {
-  border: 5px solid white;
+  transform: scale(1.1);
 }
 
 /* ================= RESPONSIVO ================= */
 
-/* Tablets e telas médias */
+/* Tablets */
 @media (max-width: 1024px) {
-  nav ul {
-    display: none;
-  }
-
-  div.menu-burguer {
-    display: flex;
-    align-items: center;
-  }
-
-  div.menu-burguer img {
-    width: 64px;
-  }
+  nav ul { display: none; }
+  div.menu-burguer { display: flex; align-items: center; }
+  div.menu-burguer img { width: 2rem; }
 
   nav ul.menu-mobile {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: orange;
-    padding-top: 100px;
-    /* espaço para o topo */
-    align-items: center;
-    gap: 20px;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #ffa500;
+    padding-top: 4rem;
+    align-items: center; gap: 1rem;
   }
 
-  nav>ul.menu-mobile>li.fechar-mobile {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
+  nav > ul.menu-mobile > li.fechar-mobile {
+    position: absolute; top: 0.75rem; right: 0.75rem; font-size: 1.25rem;
   }
 
   div.container {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0.75rem;
+    gap: 0.75rem;
   }
+
+  .contato-container { padding: 0 0.75rem; }
+  form fieldset { padding: 0.75rem; }
 }
 
-/* Smartphones maiores */
+/* Smartphones */
 @media (max-width: 768px) {
-  div.container {
-    grid-template-columns: 1fr;
-  }
+  div.container { grid-template-columns: 1fr; }
+  header { padding: 0.5rem 1rem; }
+  div.logotipo img { height: 2.5rem; }
+  div.menu-burguer img { width: 1.75rem; }
 
-  div.menu-burguer img {
-    width: 56px;
-  }
+  h1 { font-size: 1.5rem; margin: 1rem 0; }
+  h2 { font-size: 1.125rem; margin: 1rem 0; }
+  p { font-size: 0.9375rem; margin: 0.75rem 0; }
+
+  .contato-container { padding: 0 1rem; }
+  form legend { font-size: 1rem; }
+  form fieldset { padding: 1rem; margin: 0 auto 1rem; }
+  .form-buttons { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+  .form-buttons input { width: 100%; }
+  .contato-info p { font-size: 0.9375rem; }
 }
 
-/* Smartphones médios */
-@media (max-width: 500px) {
-  div.cards {
-    width: 90vw;
+/* Smartphones pequenos */
+@media (max-width: 480px) {
+  div.cards { 
+    max-width: 100%; 
+    min-height: 380px; 
+    padding: 1.25rem; 
   }
-
-  div.menu-burguer img {
-    width: 40px;
+  div.cards img { 
+    width: 100%;
+    height: 180px;
   }
-}
-
-/* Celular retrato */
-@media screen and (max-width: 768px) and (orientation: portrait) {
-  div.container {
-    grid-template-columns: 1fr;
+  div.cards p {
+    min-height: 3rem;
+    font-size: 0.9375rem;
   }
-
-  nav ul.menu-mobile li a {
-    font-size: 30px;
-    /* mantém fonte grande */
-    padding: 20px 0;
-    /* reduz padding vertical para não cortar texto */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-/* Celular paisagem */
-@media screen and (max-width: 768px) and (orientation: landscape) {
-  div.container {
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-  }
-
-  nav ul.menu-mobile {
-    flex-direction: column;
-    /* mantém empilhado */
-    justify-content: center;
-    align-items: center;
-    padding-top: 40px;
-    /* ajusta topo para caber texto */
-    gap: 8px;
-    /* reduz gap para caber tudo */
-  }
-
-  nav ul.menu-mobile li a {
-    font-size: 30px;
-    /* mantém fonte grande */
-    padding: 4px 0;
-    /* reduz padding vertical para não cortar */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  nav>ul.menu-mobile>li.fechar-mobile {
-    font-size: 2rem;
-    top: 20px;
-    right: 20px;
-    position: absolute;
-  }
+  nav li a { font-size: 0.9375rem; padding: 0.5rem 1rem; }
+  h1 { font-size: 1.375rem; }
+  h2 { font-size: 1.0625rem; }
+  p { font-size: 0.875rem; }
+  form label { font-size: 0.9375rem; }
+  .contato-info p { font-size: 0.875rem; }
 }
